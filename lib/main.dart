@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './pages/counter/index.dart';
 import './pages/text/index.dart';
+import './pages/button/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,7 +49,16 @@ class DemoHomePage extends StatelessWidget {
                     return TextPage();
                   }));
                 },
-                icon: Icon(Icons.send))
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('click to button page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ButtonPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
           ],
         ),
       ),
