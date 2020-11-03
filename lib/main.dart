@@ -7,6 +7,7 @@ import './pages/image/index.dart';
 import './pages/switch&checkBox/index.dart';
 import './pages/textfield&form/index.dart';
 import './pages/progressIndicator/index.dart';
+import './pages/row&column/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -99,66 +100,18 @@ class DemoHomePage extends StatelessWidget {
                   }));
                 },
                 icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('click to row&column align page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RowColumnPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
           ],
         ),
       ),
     );
   }
 }
-
-// class _MyHomePageState extends State<MyHomePage> {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: Wrap(
-//           // mainAxisAlignment: MainAxisAlignment.center,
-//           spacing: 8.0, // 主轴(水平)方向间距
-//           runSpacing: 14.0, // 纵轴（垂直）方向间距
-//           alignment: WrapAlignment.center, //沿主轴方向居中
-//           children: <Widget>[
-//             LinearProgressIndicator(
-//               backgroundColor: Colors.grey[200],
-//               valueColor: AlwaysStoppedAnimation(Colors.blue),
-//             ),
-//             LinearProgressIndicator(
-//               backgroundColor: Colors.grey[200],
-//               valueColor: AlwaysStoppedAnimation(Colors.blue),
-//               value: .5,
-//             ),
-//             CircularProgressIndicator(
-//               backgroundColor: Colors.grey[200],
-//               valueColor: AlwaysStoppedAnimation(Colors.blue),
-//             ),
-//             Flex(
-//               direction: Axis.horizontal,
-//               children: <Widget>[
-//                 Expanded(
-//                     flex: 1,
-//                     child: Container(
-//                       height: 30,
-//                       color: Colors.red,
-//                     )),
-//                 Expanded(
-//                     flex: 2,
-//                     child: Container(
-//                       height: 30,
-//                       color: Colors.green,
-//                     )),
-//               ],
-//             )
-//           ],
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _incrementCounter,
-//         tooltip: 'Increment',
-//         child: Icon(Icons.add),
-//       ),
-//     );
-//   }
-// }
