@@ -6,6 +6,7 @@ import './pages/button/index.dart';
 import './pages/image/index.dart';
 import './pages/switch&checkBox/index.dart';
 import './pages/textfield&form/index.dart';
+import './pages/progressIndicator/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -86,6 +87,15 @@ class DemoHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return TextFieldForm();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('click to progress indicator page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ProgressIndicatorPage();
                   }));
                 },
                 icon: Icon(Icons.send)),
