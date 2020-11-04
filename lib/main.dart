@@ -9,6 +9,7 @@ import './pages/textfield&form/index.dart';
 import './pages/progressIndicator/index.dart';
 import './pages/row&column/index.dart';
 import './pages/flex/index.dart';
+import './pages/wrap/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -116,6 +117,15 @@ class DemoHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return FLexTestPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('click to wrap test page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WrapTest();
                   }));
                 },
                 icon: Icon(Icons.send)),
