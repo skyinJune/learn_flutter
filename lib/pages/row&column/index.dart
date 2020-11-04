@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import './columnInColumn.dart';
+
 class RowColumnPage extends StatelessWidget {
   RowColumnPage();
   Widget build(BuildContext context) {
@@ -39,7 +41,23 @@ class RowColumnPage extends StatelessWidget {
               Text('test row 4 align 1 ', style: TextStyle(fontSize: 30),),
               Text('test row 4 align 2 ')
             ],
-          )
+          ),
+          // Row和Column都只会在主轴方向占用尽可能大的空间，而纵轴的长度则取决于他们最大子元素的长度
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text('test column 1'),
+              Text('test column 1 text 2')
+            ],
+          ),
+          RaisedButton.icon(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ColumnInColumnPage();
+                }));
+              },
+              icon: Icon(Icons.send),
+              label: Text('特殊情况：column 中嵌套 column'))
         ],
       ),
     );

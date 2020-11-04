@@ -8,6 +8,7 @@ import './pages/switch&checkBox/index.dart';
 import './pages/textfield&form/index.dart';
 import './pages/progressIndicator/index.dart';
 import './pages/row&column/index.dart';
+import './pages/flex/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -106,6 +107,15 @@ class DemoHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return RowColumnPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('click to flex test page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return FLexTestPage();
                   }));
                 },
                 icon: Icon(Icons.send)),
