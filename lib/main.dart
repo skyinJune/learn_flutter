@@ -11,6 +11,9 @@ import './pages/row&column/index.dart';
 import './pages/flex/index.dart';
 import './pages/wrap/index.dart';
 import './pages/stack&positioned/index.dart';
+import './pages/align/index.dart';
+import './pages/paddingPage/index.dart';
+import './pages/constrainedBox/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,8 +40,9 @@ class DemoHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(this.title)),
-      body: Center(
-        child: Column(
+      body: Container(
+        child: Wrap(
+          spacing: 5,
           children: <Widget>[
             RaisedButton.icon(
                 label: Text('click to add count page',
@@ -136,6 +140,33 @@ class DemoHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return StackPositioned();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('click to align page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return AlignTest();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('click to padding page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return PaddingPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('尺寸限制类容器',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ConstrainedBoxPage();
                   }));
                 },
                 icon: Icon(Icons.send)),
