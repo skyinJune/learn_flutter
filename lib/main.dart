@@ -14,6 +14,8 @@ import './pages/stack&positioned/index.dart';
 import './pages/align/index.dart';
 import './pages/paddingPage/index.dart';
 import './pages/constrainedBox/index.dart';
+import './pages/decoratedBox/index.dart';
+import './pages/transformTest/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -167,6 +169,24 @@ class DemoHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return ConstrainedBoxPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('装饰容器',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return DecoratedBoxPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('变换',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TransformTestPage();
                   }));
                 },
                 icon: Icon(Icons.send)),
