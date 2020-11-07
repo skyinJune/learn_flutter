@@ -16,6 +16,8 @@ import './pages/paddingPage/index.dart';
 import './pages/constrainedBox/index.dart';
 import './pages/decoratedBox/index.dart';
 import './pages/transformTest/index.dart';
+import './pages/containerBoxPage/index.dart';
+import './pages/basePage/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -187,6 +189,24 @@ class DemoHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return TransformTestPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('container box',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ContainBoxPage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('base page',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return BasePage();
                   }));
                 },
                 icon: Icon(Icons.send)),
