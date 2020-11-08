@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import './MyDrawer.dart';
+
 class BasePage extends StatefulWidget {
   _BasePageState createState() => _BasePageState();
 }
@@ -38,7 +40,7 @@ class _BasePageState extends State<BasePage>
           return IconButton(
             icon: Icon(Icons.view_list),
             onPressed: () {
-              print('leading icon pressed');
+              Scaffold.of(context).openDrawer();
             },
           );
         },),
@@ -47,6 +49,7 @@ class _BasePageState extends State<BasePage>
           tabs: tabs.map((item) => Tab(text: item,)).toList(),
         ),
       ),
+      drawer: new MyDrawer(),
       body: TabBarView(
         controller: _tabController,
         children: tabs.map((item) {

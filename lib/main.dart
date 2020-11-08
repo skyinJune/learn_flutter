@@ -18,6 +18,7 @@ import './pages/decoratedBox/index.dart';
 import './pages/transformTest/index.dart';
 import './pages/containerBoxPage/index.dart';
 import './pages/basePage/index.dart';
+import './pages/clipTest/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -207,6 +208,15 @@ class DemoHomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return BasePage();
+                  }));
+                },
+                icon: Icon(Icons.send)),
+            RaisedButton.icon(
+                label: Text('clip',
+                    style: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ClipTestPage();
                   }));
                 },
                 icon: Icon(Icons.send)),
