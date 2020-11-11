@@ -43,216 +43,116 @@ class MyApp extends StatelessWidget {
 class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
+  final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'infinite list view page',
+      'route': InfiniteListView()
+    },
+    {
+      'desc': 'list view page',
+      'route': ListViewTest()
+    },
+    {
+      'desc': 'SingleChildScrollView',
+      'route': SingleChildScrollViewTestRoute()
+    },
+    {
+      'desc': 'clip page',
+      'route': ClipTestPage()
+    },
+    {
+      'desc': 'base page',
+      'route': BasePage()
+    },
+    {
+      'desc': 'container box',
+      'route': ContainBoxPage()
+    },
+    {
+      'desc': '变换',
+      'route': TransformTestPage()
+    },
+    {
+      'desc': '装饰容器',
+      'route': DecoratedBoxPage()
+    },
+    {
+      'desc': '尺寸限制类容器',
+      'route': ConstrainedBoxPage()
+    },
+    {
+      'desc': 'padding page',
+      'route': PaddingPage()
+    },
+    {
+      'desc': 'align page',
+      'route': AlignTest()
+    },
+    {
+      'desc': 'stack & positioned page',
+      'route': StackPositioned()
+    },
+    {
+      'desc': 'wrap test page',
+      'route': WrapTest()
+    },
+    {
+      'desc': 'flex test page',
+      'route': FLexTestPage()
+    },
+    {
+      'desc': 'row&column align page',
+      'route': RowColumnPage()
+    },
+    {
+      'desc': 'progress indicator page',
+      'route': ProgressIndicatorPage()
+    },
+    {
+      'desc': 'textfield & form page',
+      'route': TextFieldForm()
+    },
+    {
+      'desc': 'switch & checkbox page',
+      'route': SwitchCheckboxPage()
+    },
+    {
+      'desc': 'image page',
+      'route': ImagePage()
+    },
+    {
+      'desc': 'button page',
+      'route': ButtonPage()
+    },
+    {
+      'desc': 'text page',
+      'route': TextPage()
+    },
+    {
+      'desc': 'add count page',
+      'route': CounterPage()
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(this.title)),
-      body: Container(
-        child: Wrap(
-          spacing: 5,
-          children: <Widget>[
-            RaisedButton.icon(
-                label: Text('click to add count page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return CounterPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label:
-                    Text('click to text page', style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TextPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to button page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ButtonPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label:
-                    Text('click to image page', style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ImagePage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to switch & checkbox page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return SwitchCheckboxPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to textfield & form page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TextFieldForm();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to progress indicator page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ProgressIndicatorPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to row&column align page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return RowColumnPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to flex test page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return FLexTestPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to wrap test page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return WrapTest();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to stack & positioned page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return StackPositioned();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to align page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return AlignTest();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('click to padding page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return PaddingPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('尺寸限制类容器',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ConstrainedBoxPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('装饰容器',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DecoratedBoxPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('变换',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TransformTestPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('container box',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ContainBoxPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('base page',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return BasePage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('clip',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ClipTestPage();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('SingleChildScrollView',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return SingleChildScrollViewTestRoute();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('listview',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ListViewTest();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-            RaisedButton.icon(
-                label: Text('infinite listview',
-                    style: TextStyle(fontSize: 12)),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return InfiniteListView();
-                  }));
-                },
-                icon: Icon(Icons.send)),
-          ],
-        ),
-      ),
+      body: ListView.separated(
+        itemCount: _routeList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(_routeList[index]['desc']),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return _routeList[index]['route'];
+              }));
+            },
+          );
+        },
+        separatorBuilder: (context, index) => Divider(height: .0),
+      )
     );
   }
 }
