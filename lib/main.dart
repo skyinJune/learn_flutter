@@ -22,6 +22,8 @@ import './pages/clipTest/index.dart';
 import './pages/SingleChildScrollViewPage/index.dart';
 import './pages/listViewTest/index.dart';
 import './pages/infiniteListView/index.dart';
+import './pages/gridViewTestPage//index.dart';
+import './pages/infiniteListWithGridView/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,6 +46,14 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'Infinite List With GridView',
+      'route': InfiniteListWithGridView()
+    },
+    {
+      'desc': 'grid view page',
+      'route': GridViewPage()
+    },
     {
       'desc': 'infinite list view page',
       'route': InfiniteListView()
