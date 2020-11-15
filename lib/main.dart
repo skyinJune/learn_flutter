@@ -26,6 +26,7 @@ import './pages/gridViewTestPage//index.dart';
 import './pages/infiniteListWithGridView/index.dart';
 import './pages/staggeredGridViewPage/index.dart';
 import './pages/customScrollViewTest/index.dart';
+import './pages/scrollController/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,6 +49,10 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'Scroller Controller Test page',
+      'route': ScrollControllerTestPage()
+    },
     {
       'desc': 'Custom Scroll View Test page',
       'route': CustomScrollViewTest()
