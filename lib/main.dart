@@ -27,6 +27,7 @@ import './pages/infiniteListWithGridView/index.dart';
 import './pages/staggeredGridViewPage/index.dart';
 import './pages/customScrollViewTest/index.dart';
 import './pages/scrollController/index.dart';
+import './pages/willPopScopeTestRoute/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,6 +50,10 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'WillPopScope Test page',
+      'route': WillPopScopeTestRoute()
+    },
     {
       'desc': 'Scroller Controller Test page',
       'route': ScrollControllerTestPage()

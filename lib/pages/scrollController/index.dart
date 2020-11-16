@@ -12,7 +12,6 @@ class _ScrollControllerTestPageState extends State <ScrollControllerTestPage> {
   void initState() {
     super.initState();
     _controller.addListener(() {
-      print(_controller.offset);
       if (_controller.offset < 1000 && _showBtn) {
         setState(() {
           _showBtn = false;
@@ -23,6 +22,12 @@ class _ScrollControllerTestPageState extends State <ScrollControllerTestPage> {
         });
       }
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 
   @override
