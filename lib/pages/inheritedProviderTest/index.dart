@@ -22,16 +22,16 @@ class _InheritedProviderTestRoute extends State<InheritedProviderTestRoute> {
           child: Builder(builder: (context) {
             return Column(
               children: <Widget>[
-                Builder(builder: (context) {
-                  var cart = ChangeNotifierProvider.of<CartModel>(context);
-                  return Text('total price is ${cart.totalPrice}');
-                }),
+                Consumer<CartModel>(
+                    builder: (context, cart) =>
+                        Text('total price is ${cart.totalPrice}')
+                ),
                 Builder(builder: (context) {
                   print("RaisedButton build");
                   return RaisedButton(
                     child: Text('add good'),
                     onPressed: () {
-                      var cart = ChangeNotifierProvider.of<CartModel>(context);
+                      var cart = ChangeNotifierProvider.of<CartModel>(context, listen: false);
                       cart.add(Item(2, 20.0));
                     },
                   );
@@ -64,5 +64,24 @@ class CartModel extends ChangeNotifier {
     _items.add(item);
     // 通知监听器，重新构建InheritedProvider, 更新状态
     notifyListeners();
+  }
+}
+
+class Consumer<T> extends StatelessWidget {
+  Consumer({
+    Key key,
+    @required this.builder,
+    this.child
+  });
+
+  final Widget child;
+  final Widget Function(BuildContext context, T value) builder;
+
+  @override
+  Widget build(BuildContext context) {
+    return builder(
+      context,
+      ChangeNotifierProvider.of<T>(context)
+    );
   }
 }
