@@ -30,6 +30,7 @@ import './pages/scrollController/index.dart';
 import './pages/willPopScopeTestRoute/index.dart';
 import './pages/inheritedWidgetTest/index.dart';
 import './pages/inheritedProviderTest/index.dart';
+import './pages/computeLuminanceTest/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -52,6 +53,10 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'Compute Luminance Test',
+      'route': ComputeLuminanceTestRoute()
+    },
     {
       'desc': 'Inherited Provider Test',
       'route': InheritedProviderTestRoute()
