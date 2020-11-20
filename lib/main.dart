@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/futureBuilderTest/index.dart';
+import 'package:learn_flutter/pages/streamBuilderTest/index.dart';
 import 'package:learn_flutter/pages/themeTest/index.dart';
 
 import './pages/counter/index.dart';
@@ -55,6 +56,10 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'Stream Builder Test',
+      'route': StreamBuilderTestRoute()
+    },
     {
       'desc': 'Future Builder Test',
       'route': FutureBuilderTestRoute()
