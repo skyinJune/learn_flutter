@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/dialogTest/simpleDialogOption.dart';
 
 import 'deleteDialog1.dart';
+import 'deleteDialog2.dart';
 import 'listDialog.dart';
 
 class DialogTestRoute extends StatelessWidget {
@@ -36,6 +37,12 @@ class DialogTestRoute extends StatelessWidget {
               child: Text('ListDialog'),
               onPressed: () {
                 showListDialog(context);
+              },
+            ),
+            RaisedButton(
+              child: Text('deleteDialog2'),
+              onPressed: () {
+                deleteDialog2(context);
               },
             ),
           ],
