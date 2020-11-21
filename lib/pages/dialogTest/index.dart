@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/dialogTest/simpleDialogOption.dart';
 
 import 'deleteDialog1.dart';
+import 'listDialog.dart';
 
 class DialogTestRoute extends StatelessWidget {
   @override
@@ -29,6 +30,12 @@ class DialogTestRoute extends StatelessWidget {
               child: Text('选择语言'),
               onPressed: () {
                 changeLanguage(context);
+              },
+            ),
+            RaisedButton(
+              child: Text('ListDialog'),
+              onPressed: () {
+                showListDialog(context);
               },
             ),
           ],
