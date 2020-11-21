@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/dialogTest/simpleDialogOption.dart';
+
+import 'deleteDialog1.dart';
 
 class DialogTestRoute extends StatelessWidget {
   @override
@@ -22,35 +25,15 @@ class DialogTestRoute extends StatelessWidget {
                 }
               },
             ),
+            RaisedButton(
+              child: Text('选择语言'),
+              onPressed: () {
+                changeLanguage(context);
+              },
+            ),
           ],
         ),
       ),
     );
   }
-}
-
-Future<bool> showDeleteDialog1(BuildContext context) {
-  return showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text('提示'),
-          content: Text('确定要删除当前文件吗?'),
-          actions: <Widget>[
-            FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text('取消')
-            ),
-            FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pop(true);
-                },
-                child: Text('确定')
-            ),
-          ],
-        );
-      }
-  );
 }
