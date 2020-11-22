@@ -6,6 +6,7 @@ import 'deleteDialog1.dart';
 import 'deleteDialog2.dart';
 import 'deleteDialog3.dart';
 import 'listDialog.dart';
+import 'showModalBottomSheetTest.dart';
 
 class DialogTestRoute extends StatelessWidget {
   @override
@@ -55,6 +56,12 @@ class DialogTestRoute extends StatelessWidget {
                 } else {
                   print('确定, 同时删除子目录$delete');
                 }
+              },
+            ),
+            RaisedButton(
+              child: Text('showModalBottomSheetTest'),
+              onPressed: () {
+                showModalBottomSheetTest(context);
               },
             ),
           ],
