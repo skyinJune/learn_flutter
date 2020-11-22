@@ -4,6 +4,7 @@ import 'package:learn_flutter/pages/dialogTest/simpleDialogOption.dart';
 
 import 'deleteDialog1.dart';
 import 'deleteDialog2.dart';
+import 'deleteDialog3.dart';
 import 'listDialog.dart';
 
 class DialogTestRoute extends StatelessWidget {
@@ -43,6 +44,17 @@ class DialogTestRoute extends StatelessWidget {
               child: Text('deleteDialog2'),
               onPressed: () {
                 deleteDialog2(context);
+              },
+            ),
+            RaisedButton(
+              child: Text('对话框3'),
+              onPressed: () async {
+                bool delete = await deleteDialog3(context);
+                if (delete == null) {
+                  print('取消');
+                } else {
+                  print('确定, 同时删除子目录$delete');
+                }
               },
             ),
           ],
