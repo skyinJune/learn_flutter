@@ -16,12 +16,24 @@ Future<bool> deleteDialog3(BuildContext context) {
               Row(
                 children: [
                   Text('同时删除子目录'),
-                  DialogCheckbox(
-                      value: _withTree,
-                      onChanged: (value) {
-                        _withTree = !_withTree;
+                  StatefulBuilder(
+                      builder: (context, _setState) {
+                        return Checkbox(
+                            value: _withTree,
+                            onChanged: (bool v) {
+                              _setState(() {
+                                _withTree = v;
+                              });
+                            }
+                        );
                       }
                   )
+                  // DialogCheckbox(
+                  //     value: _withTree,
+                  //     onChanged: (value) {
+                  //       _withTree = !_withTree;
+                  //     }
+                  // )
                 ],
               )
             ],
