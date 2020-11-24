@@ -7,6 +7,7 @@ import 'deleteDialog2.dart';
 import 'deleteDialog3.dart';
 import 'listDialog.dart';
 import 'showModalBottomSheetTest.dart';
+import 'showFullScreenBottomSheet.dart';
 
 class DialogTestRoute extends StatelessWidget {
   @override
@@ -62,6 +63,12 @@ class DialogTestRoute extends StatelessWidget {
               child: Text('showModalBottomSheetTest'),
               onPressed: () {
                 showModalBottomSheetTest(context);
+              },
+            ),
+            RaisedButton(
+              child: Text('showBottomSheet'),
+              onPressed: () {
+                showBottomSheetTest(context);
               },
             ),
           ],
