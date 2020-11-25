@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/dialogTest/showDatePickerTest.dart';
 import 'package:learn_flutter/pages/dialogTest/simpleDialogOption.dart';
 
 import 'deleteDialog1.dart';
@@ -76,6 +77,13 @@ class DialogTestRoute extends StatelessWidget {
               child: Text('showLoadingDialog'),
               onPressed: () {
                 showLoadingDialog(context);
+              },
+            ),
+            RaisedButton(
+              child: Text('showDatePickerTest'),
+              onPressed: () async {
+                var choseDate = await showDatePickerTest(context);
+                print('chose date: $choseDate');
               },
             ),
           ],
