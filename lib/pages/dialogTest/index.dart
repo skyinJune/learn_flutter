@@ -6,6 +6,7 @@ import 'deleteDialog1.dart';
 import 'deleteDialog2.dart';
 import 'deleteDialog3.dart';
 import 'listDialog.dart';
+import 'loadingDialog.dart';
 import 'showModalBottomSheetTest.dart';
 import 'showFullScreenBottomSheet.dart';
 
@@ -68,12 +69,18 @@ class DialogTestRoute extends StatelessWidget {
             RaisedButton(
               child: Text('showBottomSheet'),
               onPressed: () {
-                showBottomSheetTest(context);
+                PersistentBottomSheetController controller = showBottomSheetTest(context);
+              },
+            ),
+            RaisedButton(
+              child: Text('showLoadingDialog'),
+              onPressed: () {
+                showLoadingDialog(context);
               },
             ),
           ],
         ),
-      ),
+      )
     );
   }
 }
