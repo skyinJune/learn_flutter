@@ -3,6 +3,7 @@ import 'package:learn_flutter/pages/dialogTest/index.dart';
 import 'package:learn_flutter/pages/dragTest/index.dart';
 import 'package:learn_flutter/pages/futureBuilderTest/index.dart';
 import 'package:learn_flutter/pages/gestureDetectorTest/inddex.dart';
+import 'package:learn_flutter/pages/gestureRecognizerTest/index.dart';
 import 'package:learn_flutter/pages/pointerEventTest/index.dart';
 import 'package:learn_flutter/pages/scaleTest/index.dart';
 import 'package:learn_flutter/pages/streamBuilderTest/index.dart';
@@ -61,6 +62,10 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'Gesture Recognizer Test',
+      'route': GestureRecognizerTest()
+    },
     {
       'desc': 'Scale Test',
       'route': ScaleTestRoute()
