@@ -18,21 +18,38 @@ class _BothDirectionTestRouteState extends State<BothDirectionTestRoute> {
           Positioned(
               left: _left,
               top: _top,
-              child: GestureDetector(
-                child: CircleAvatar(
-                  child: Text('B'),
-                  backgroundColor: Colors.blue,
+              child: Listener(
+                onPointerDown: (detail) {
+                  print('outer point down');
+                },
+                onPointerUp: (detail) {
+                  print('outer point up');
+                },
+                child: GestureDetector(
+                  child: CircleAvatar(
+                    child: Text('B'),
+                    backgroundColor: Colors.blue,
+                  ),
+                  onVerticalDragUpdate: (detail) {
+                    setState(() {
+                      _top += detail.delta.dy;
+                    });
+                  },
+                  onHorizontalDragUpdate: (detail) {
+                    setState(() {
+                      _left += detail.delta.dx;
+                    });
+                  },
+                  onTapDown: (detail) {
+                    print('down');
+                  },
+                  onTapUp: (detail) {
+                    print('up');
+                  },
+                  onHorizontalDragEnd: (detail) {
+                    print('drag end');
+                  },
                 ),
-                onVerticalDragUpdate: (detail) {
-                  setState(() {
-                    _top += detail.delta.dy;
-                  });
-                },
-                onHorizontalDragUpdate: (detail) {
-                  setState(() {
-                    _left += detail.delta.dx;
-                  });
-                },
               )
           )
         ],
