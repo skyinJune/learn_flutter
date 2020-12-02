@@ -14,31 +14,38 @@ class _CustomNotificationState extends State<CustomNotification> {
       appBar: AppBar(title: Text('Custom Notification'),),
       body: NotificationListener<MyNotification>(
         onNotification: (notification) {
-          setState(() {
-            _text += notification.msg + ' ';
-          });
+          print('outer: ${notification.msg}');
+          return false;
         },
-        child: Center(
-          child: Column(
-            children: [
-              // RaisedButton(
-              //     child: Text('send notification msg'),
-              //     onPressed: () {
-              //       MyNotification('hi').dispatch(context);
-              //     }
-              // ),
-              Builder(
-                builder: (context) {
-                  return RaisedButton(
-                      child: Text('send notification msg'),
-                      onPressed: () {
-                        MyNotification('hi').dispatch(context);
-                      }
-                  );
-                },
-              ),
-              Text('$_text')
-            ],
+        child: NotificationListener<MyNotification>(
+          onNotification: (notification) {
+            setState(() {
+              _text += notification.msg + ' ';
+            });
+            return true;
+          },
+          child: Center(
+            child: Column(
+              children: [
+                // RaisedButton(
+                //     child: Text('send notification msg'),
+                //     onPressed: () {
+                //       MyNotification('hi').dispatch(context);
+                //     }
+                // ),
+                Builder(
+                  builder: (context) {
+                    return RaisedButton(
+                        child: Text('send notification msg'),
+                        onPressed: () {
+                          MyNotification('hi').dispatch(context);
+                        }
+                    );
+                  },
+                ),
+                Text('$_text')
+              ],
+            ),
           ),
         ),
       ),
