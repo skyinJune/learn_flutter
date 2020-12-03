@@ -15,10 +15,11 @@ class _SimpleAnimationRouteState extends State<SimpleAnimationRoute>
   void initState() {
     super.initState();
     controller = new AnimationController(
-      duration: Duration(microseconds: 500),
+      duration: Duration(milliseconds: 500),
       vsync: this
     );
-    animation = new Tween(begin: 100.0, end: 200.0).animate(controller)
+    animation = CurvedAnimation(parent: controller, curve: Curves.ease);
+    animation = new Tween(begin: 100.0, end: 200.0).animate(animation)
     ..addListener(() {
       setState(() {
       });
