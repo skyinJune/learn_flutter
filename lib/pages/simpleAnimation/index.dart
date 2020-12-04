@@ -5,15 +5,15 @@ class SimpleAnimationRoute extends StatefulWidget {
   _SimpleAnimationRouteState createState() => _SimpleAnimationRouteState();
 }
 
-class AnimatedImage extends AnimatedWidget {
-  AnimatedImage({Key key, Animation<double> animation})
-  : super(key: key, listenable: animation);
-  @override
-  Widget build(BuildContext context) {
-    final Animation<double> animation = listenable;
-    return Image.asset('images/avatar.jpeg', width: animation.value);
-  }
-}
+// class AnimatedImage extends AnimatedWidget {
+//   AnimatedImage({Key key, Animation<double> animation})
+//   : super(key: key, listenable: animation);
+//   @override
+//   Widget build(BuildContext context) {
+//     final Animation<double> animation = listenable;
+//     return Image.asset('images/avatar.jpeg', width: animation.value);
+//   }
+// }
 
 class _SimpleAnimationRouteState extends State<SimpleAnimationRoute>
   with SingleTickerProviderStateMixin {
@@ -47,7 +47,17 @@ class _SimpleAnimationRouteState extends State<SimpleAnimationRoute>
       appBar: AppBar(title: Text('Simple Animation'),),
       body: Center(
         child: GestureDetector(
-          child: AnimatedImage(animation: animation,),
+          // child: AnimatedImage(animation: animation,),
+          child: AnimatedBuilder(
+            child: Image.asset('images/avatar.jpeg'),
+            animation: animation,
+            builder: (BuildContext context, Widget child) {
+              return Container(
+                child: child,
+                width: animation.value,
+              );
+            },
+          ),
           onDoubleTap: () {
             if (toggleScale) {
               controller.reverse();
