@@ -29,10 +29,19 @@ class _SimpleAnimationRouteState extends State<SimpleAnimationRoute>
       vsync: this
     );
     animation = CurvedAnimation(parent: controller, curve: Curves.ease);
-    animation = new Tween(begin: 100.0, end: 200.0).animate(animation)
-    ..addListener(() {
-      setState(() {
-      });
+    animation = new Tween(begin: 100.0, end: 200.0).animate(animation);
+    // 使用 AnimatedWidget 或 AnimatedBuilder 后就不需要显示的写监听了
+    // ..addListener(() {
+    //   setState(() {
+    //   });
+    // });
+    animation.addStatusListener((status) {
+      switch(status) {
+        case AnimationStatus.completed: print('completed'); break;
+        case AnimationStatus.dismissed: print('dismissed'); break;
+        case AnimationStatus.forward: print('forward'); break;
+        case AnimationStatus.reverse: print('reverse'); break;
+      }
     });
   }
 
