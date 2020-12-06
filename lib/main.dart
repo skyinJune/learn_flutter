@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/bothDerectionTest/index.dart';
 import 'package:learn_flutter/pages/customNotificationTest/index.dart';
+import 'package:learn_flutter/pages/customPageTransAnimation/index.dart';
 import 'package:learn_flutter/pages/dialogTest/index.dart';
 import 'package:learn_flutter/pages/dragTest/index.dart';
 import 'package:learn_flutter/pages/futureBuilderTest/index.dart';
@@ -66,6 +67,10 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'Custom Page Trans Animation',
+      'route': CustomPageTransAnimation()
+    },
     {
       'desc': 'Simple Animation',
       'route': SimpleAnimationRoute()
