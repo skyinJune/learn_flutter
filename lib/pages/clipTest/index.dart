@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ClipTestPage extends StatelessWidget {
   Widget _avater = Image.asset(
-      'images/avatar.jpeg',
-      width: 80,
+    'images/avatar.jpeg',
+    width: 80,
   );
 
   @override
@@ -55,9 +56,7 @@ class ClipTestPage extends StatelessWidget {
               ],
             ),
             DecoratedBox(
-              decoration: BoxDecoration(
-                color: Colors.red
-              ),
+              decoration: BoxDecoration(color: Colors.red),
               child: ClipRect(
                 clipper: MyCliper(),
                 child: _avater,

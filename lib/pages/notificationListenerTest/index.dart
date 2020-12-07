@@ -5,10 +5,12 @@ class NotificationTestRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Notification Test'),),
+      appBar: AppBar(
+        title: Text('Notification Test'),
+      ),
       body: NotificationListener(
         onNotification: (notification) {
-          switch(notification.runtimeType) {
+          switch (notification.runtimeType) {
             case ScrollStartNotification:
               print('scroll start');
               break;
@@ -22,11 +24,14 @@ class NotificationTestRoute extends StatelessWidget {
               print('scroll end');
               break;
           }
+          return true;
         },
         child: ListView.builder(
           itemCount: 30,
           itemBuilder: (BuildContext contest, int index) {
-            return ListTile(title: Text('$index'),);
+            return ListTile(
+              title: Text('$index'),
+            );
           },
         ),
       ),

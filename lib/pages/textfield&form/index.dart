@@ -36,6 +36,7 @@ class _TextFieldForm extends State<TextFieldForm> {
       body: Center(
           child: Form(
         key: _formKey,
+        // ignore: deprecated_member_use
         autovalidate: true,
         child: Column(
           children: <Widget>[

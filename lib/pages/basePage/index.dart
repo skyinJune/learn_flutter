@@ -16,11 +16,8 @@ class _BasePageState extends State<BasePage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(
-        initialIndex: 1,
-        length: tabs.length,
-        vsync: this
-    );
+    _tabController =
+        TabController(initialIndex: 1, length: tabs.length, vsync: this);
   }
 
   @override
@@ -36,17 +33,23 @@ class _BasePageState extends State<BasePage>
             },
           )
         ],
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: Icon(Icons.view_list),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        },),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: Icon(Icons.view_list),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
         bottom: TabBar(
           controller: _tabController,
-          tabs: tabs.map((item) => Tab(text: item,)).toList(),
+          tabs: tabs
+              .map((item) => Tab(
+                    text: item,
+                  ))
+              .toList(),
         ),
       ),
       drawer: new MyDrawer(),
@@ -55,15 +58,18 @@ class _BasePageState extends State<BasePage>
         children: tabs.map((item) {
           return Container(
             alignment: Alignment.center,
-            child: Text(item, textScaleFactor: 5,),
+            child: Text(
+              item,
+              textScaleFactor: 5,
+            ),
           );
         }).toList(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('首页')),
-          BottomNavigationBarItem(icon: Icon(Icons.message), title: Text('消息')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我的')),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: '首页'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: '消息'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: '我的'),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTaped,
