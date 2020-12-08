@@ -12,6 +12,7 @@ import 'package:learn_flutter/pages/notificationListenerTest/index.dart';
 import 'package:learn_flutter/pages/pointerEventTest/index.dart';
 import 'package:learn_flutter/pages/scaleTest/index.dart';
 import 'package:learn_flutter/pages/simpleAnimation/index.dart';
+import 'package:learn_flutter/pages/staggerAnimationTest/index.dart';
 import 'package:learn_flutter/pages/streamBuilderTest/index.dart';
 import 'package:learn_flutter/pages/themeTest/index.dart';
 
@@ -68,6 +69,10 @@ class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
   final List _routeList = <Map> [ // route列表
+    {
+      'desc': 'Stagger Animation Test',
+      'route': StaggerAnimationTest()
+    },
     {
       'desc': 'Hero Animation Test',
       'route': HeroAnimationTestRoute()
