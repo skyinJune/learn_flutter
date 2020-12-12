@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/animatedSwitcher/index.dart';
 import 'package:learn_flutter/pages/bothDerectionTest/index.dart';
 import 'package:learn_flutter/pages/customNotificationTest/index.dart';
 import 'package:learn_flutter/pages/customPageTransAnimation/index.dart';
@@ -68,216 +69,88 @@ class MyApp extends StatelessWidget {
 class DemoHomePage extends StatelessWidget {
   DemoHomePage({Key key, this.title}) : super(key: key);
   final String title; // home页title
-  final List _routeList = <Map> [ // route列表
-    {
-      'desc': 'Stagger Animation Test',
-      'route': StaggerAnimationTest()
-    },
-    {
-      'desc': 'Hero Animation Test',
-      'route': HeroAnimationTestRoute()
-    },
+  final List _routeList = <Map>[
+    // route列表
+    {'desc': 'Animated Switcher', 'route': AnimatedSwitcherRoute()},
+    {'desc': 'Stagger Animation Test', 'route': StaggerAnimationTest()},
+    {'desc': 'Hero Animation Test', 'route': HeroAnimationTestRoute()},
     {
       'desc': 'Custom Page Trans Animation',
       'route': CustomPageTransAnimation()
     },
-    {
-      'desc': 'Simple Animation',
-      'route': SimpleAnimationRoute()
-    },
-    {
-      'desc': 'Custom Notification',
-      'route': CustomNotification()
-    },
-    {
-      'desc': 'Notification Test',
-      'route': NotificationTestRoute()
-    },
-    {
-      'desc': 'Both Direction Test',
-      'route': BothDirectionTestRoute()
-    },
-    {
-      'desc': 'Gesture Recognizer Test',
-      'route': GestureRecognizerTest()
-    },
-    {
-      'desc': 'Scale Test',
-      'route': ScaleTestRoute()
-    },
-    {
-      'desc': 'drag Test',
-      'route': DragTest()
-    },
-    {
-      'desc': 'Gesture Detector Test',
-      'route': GestureDetectorTestRoute()
-    },
-    {
-      'desc': 'Pointer Event Test',
-      'route': PointerEventTestRoute()
-    },
-    {
-      'desc': 'Dialog Test',
-      'route': DialogTestRoute()
-    },
-    {
-      'desc': 'Stream Builder Test',
-      'route': StreamBuilderTestRoute()
-    },
-    {
-      'desc': 'Future Builder Test',
-      'route': FutureBuilderTestRoute()
-    },
-    {
-      'desc': 'Theme Test',
-      'route': ThemeTestRoute()
-    },
-    {
-      'desc': 'Compute Luminance Test',
-      'route': ComputeLuminanceTestRoute()
-    },
-    {
-      'desc': 'Inherited Provider Test',
-      'route': InheritedProviderTestRoute()
-    },
-    {
-      'desc': 'InheritedWidget test page',
-      'route': InheritedWidgetTestRoute()
-    },
-    {
-      'desc': 'WillPopScope Test page',
-      'route': WillPopScopeTestRoute()
-    },
+    {'desc': 'Simple Animation', 'route': SimpleAnimationRoute()},
+    {'desc': 'Custom Notification', 'route': CustomNotification()},
+    {'desc': 'Notification Test', 'route': NotificationTestRoute()},
+    {'desc': 'Both Direction Test', 'route': BothDirectionTestRoute()},
+    {'desc': 'Gesture Recognizer Test', 'route': GestureRecognizerTest()},
+    {'desc': 'Scale Test', 'route': ScaleTestRoute()},
+    {'desc': 'drag Test', 'route': DragTest()},
+    {'desc': 'Gesture Detector Test', 'route': GestureDetectorTestRoute()},
+    {'desc': 'Pointer Event Test', 'route': PointerEventTestRoute()},
+    {'desc': 'Dialog Test', 'route': DialogTestRoute()},
+    {'desc': 'Stream Builder Test', 'route': StreamBuilderTestRoute()},
+    {'desc': 'Future Builder Test', 'route': FutureBuilderTestRoute()},
+    {'desc': 'Theme Test', 'route': ThemeTestRoute()},
+    {'desc': 'Compute Luminance Test', 'route': ComputeLuminanceTestRoute()},
+    {'desc': 'Inherited Provider Test', 'route': InheritedProviderTestRoute()},
+    {'desc': 'InheritedWidget test page', 'route': InheritedWidgetTestRoute()},
+    {'desc': 'WillPopScope Test page', 'route': WillPopScopeTestRoute()},
     {
       'desc': 'Scroller Controller Test page',
       'route': ScrollControllerTestPage()
     },
-    {
-      'desc': 'Custom Scroll View Test page',
-      'route': CustomScrollViewTest()
-    },
-    {
-      'desc': 'Staggered GridView Page',
-      'route': StaggeredGridViewPage()
-    },
+    {'desc': 'Custom Scroll View Test page', 'route': CustomScrollViewTest()},
+    {'desc': 'Staggered GridView Page', 'route': StaggeredGridViewPage()},
     {
       'desc': 'Infinite List With GridView',
       'route': InfiniteListWithGridView()
     },
-    {
-      'desc': 'grid view page',
-      'route': GridViewPage()
-    },
-    {
-      'desc': 'infinite list view page',
-      'route': InfiniteListView()
-    },
-    {
-      'desc': 'list view page',
-      'route': ListViewTest()
-    },
+    {'desc': 'grid view page', 'route': GridViewPage()},
+    {'desc': 'infinite list view page', 'route': InfiniteListView()},
+    {'desc': 'list view page', 'route': ListViewTest()},
     {
       'desc': 'SingleChildScrollView',
       'route': SingleChildScrollViewTestRoute()
     },
-    {
-      'desc': 'clip page',
-      'route': ClipTestPage()
-    },
-    {
-      'desc': 'base page',
-      'route': BasePage()
-    },
-    {
-      'desc': 'container box',
-      'route': ContainBoxPage()
-    },
-    {
-      'desc': '变换',
-      'route': TransformTestPage()
-    },
-    {
-      'desc': '装饰容器',
-      'route': DecoratedBoxPage()
-    },
-    {
-      'desc': '尺寸限制类容器',
-      'route': ConstrainedBoxPage()
-    },
-    {
-      'desc': 'padding page',
-      'route': PaddingPage()
-    },
-    {
-      'desc': 'align page',
-      'route': AlignTest()
-    },
-    {
-      'desc': 'stack & positioned page',
-      'route': StackPositioned()
-    },
-    {
-      'desc': 'wrap test page',
-      'route': WrapTest()
-    },
-    {
-      'desc': 'flex test page',
-      'route': FLexTestPage()
-    },
-    {
-      'desc': 'row&column align page',
-      'route': RowColumnPage()
-    },
-    {
-      'desc': 'progress indicator page',
-      'route': ProgressIndicatorPage()
-    },
-    {
-      'desc': 'textfield & form page',
-      'route': TextFieldForm()
-    },
-    {
-      'desc': 'switch & checkbox page',
-      'route': SwitchCheckboxPage()
-    },
-    {
-      'desc': 'image page',
-      'route': ImagePage()
-    },
-    {
-      'desc': 'button page',
-      'route': ButtonPage()
-    },
-    {
-      'desc': 'text page',
-      'route': TextPage()
-    },
-    {
-      'desc': 'add count page',
-      'route': CounterPage()
-    }
+    {'desc': 'clip page', 'route': ClipTestPage()},
+    {'desc': 'base page', 'route': BasePage()},
+    {'desc': 'container box', 'route': ContainBoxPage()},
+    {'desc': '变换', 'route': TransformTestPage()},
+    {'desc': '装饰容器', 'route': DecoratedBoxPage()},
+    {'desc': '尺寸限制类容器', 'route': ConstrainedBoxPage()},
+    {'desc': 'padding page', 'route': PaddingPage()},
+    {'desc': 'align page', 'route': AlignTest()},
+    {'desc': 'stack & positioned page', 'route': StackPositioned()},
+    {'desc': 'wrap test page', 'route': WrapTest()},
+    {'desc': 'flex test page', 'route': FLexTestPage()},
+    {'desc': 'row&column align page', 'route': RowColumnPage()},
+    {'desc': 'progress indicator page', 'route': ProgressIndicatorPage()},
+    {'desc': 'textfield & form page', 'route': TextFieldForm()},
+    {'desc': 'switch & checkbox page', 'route': SwitchCheckboxPage()},
+    {'desc': 'image page', 'route': ImagePage()},
+    {'desc': 'button page', 'route': ButtonPage()},
+    {'desc': 'text page', 'route': TextPage()},
+    {'desc': 'add count page', 'route': CounterPage()}
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(this.title)),
-      body: ListView.separated(
-        itemCount: _routeList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(_routeList[index]['desc']),
-            trailing: Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return _routeList[index]['route'];
-              }));
-            },
-          );
-        },
-        separatorBuilder: (context, index) => Divider(height: .0),
-      )
-    );
+        appBar: AppBar(title: Text(this.title)),
+        body: ListView.separated(
+          itemCount: _routeList.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              title: Text(_routeList[index]['desc']),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return _routeList[index]['route'];
+                }));
+              },
+            );
+          },
+          separatorBuilder: (context, index) => Divider(height: .0),
+        ));
   }
 }

@@ -1,47 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class StaggerAnimation extends StatelessWidget {
-  StaggerAnimation({Key key, this.controller}) :
-      super(key: key) {
-    height = Tween<double>(
-        begin: 0.0,
-        end: 300.0
-    ).animate(
-        CurvedAnimation(
-            parent: controller,
-            curve: Interval(
-                0.0, 0.6,
-                curve: Curves.ease
-            )
-        )
-    );
+  StaggerAnimation({Key key, this.controller}) : super(key: key) {
+    height = Tween<double>(begin: 0.0, end: 300.0).animate(CurvedAnimation(
+        parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
 
-    color = ColorTween(
-        begin: Colors.green,
-        end: Colors.red
-    ).animate(
+    color = ColorTween(begin: Colors.green, end: Colors.red).animate(
         CurvedAnimation(
-            parent: controller,
-            curve: Interval(
-                0.0, 0.6,
-                curve: Curves.ease
-            )
-        )
-    );
+            parent: controller, curve: Interval(0.0, 0.6, curve: Curves.ease)));
 
     padding = Tween<EdgeInsets>(
-        begin: EdgeInsets.only(left: 0.0),
-        end: EdgeInsets.only(left: 100.0)
-    ).animate(
-        CurvedAnimation(
-            parent: controller,
-            curve: Interval(
-                0.6, 1.0,
-                curve: Curves.ease
-            )
-        )
-    );
+            begin: EdgeInsets.only(left: 0.0),
+            end: EdgeInsets.only(left: 100.0))
+        .animate(CurvedAnimation(
+            parent: controller, curve: Interval(0.6, 1.0, curve: Curves.ease)));
   }
 
   final Animation<double> controller;
@@ -63,9 +37,6 @@ class StaggerAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-        animation: controller,
-        builder: _buildAnimation
-    );
+    return AnimatedBuilder(animation: controller, builder: _buildAnimation);
   }
 }
