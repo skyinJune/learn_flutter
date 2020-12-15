@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/animatedSwitcher/index.dart';
+import 'package:learn_flutter/pages/animatedWidgetTest/index.dart';
 import 'package:learn_flutter/pages/bothDerectionTest/index.dart';
 import 'package:learn_flutter/pages/customNotificationTest/index.dart';
 import 'package:learn_flutter/pages/customPageTransAnimation/index.dart';
@@ -71,6 +72,7 @@ class DemoHomePage extends StatelessWidget {
   final String title; // home页title
   final List _routeList = <Map>[
     // route列表
+    {'desc': 'Animated Widget', 'route': AnimatedWidgetTest()},
     {'desc': 'Animated Switcher', 'route': AnimatedSwitcherRoute()},
     {'desc': 'Stagger Animation Test', 'route': StaggerAnimationTest()},
     {'desc': 'Hero Animation Test', 'route': HeroAnimationTestRoute()},
