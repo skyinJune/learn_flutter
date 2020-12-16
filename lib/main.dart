@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/animatedSwitcher/index.dart';
 import 'package:learn_flutter/pages/animatedWidgetTest/index.dart';
 import 'package:learn_flutter/pages/bothDerectionTest/index.dart';
+import 'package:learn_flutter/pages/customGradientButtonTest/index.dart';
 import 'package:learn_flutter/pages/customNotificationTest/index.dart';
 import 'package:learn_flutter/pages/customPageTransAnimation/index.dart';
 import 'package:learn_flutter/pages/dialogTest/index.dart';
@@ -72,6 +73,10 @@ class DemoHomePage extends StatelessWidget {
   final String title; // home页title
   final List _routeList = <Map>[
     // route列表
+    {
+      'desc': 'Custom Gradient Button Test',
+      'route': CustomGradientButtonTest()
+    },
     {'desc': 'Animated Widget', 'route': AnimatedWidgetTest()},
     {'desc': 'Animated Switcher', 'route': AnimatedSwitcherRoute()},
     {'desc': 'Stagger Animation Test', 'route': StaggerAnimationTest()},
@@ -117,9 +122,9 @@ class DemoHomePage extends StatelessWidget {
     {'desc': 'clip page', 'route': ClipTestPage()},
     {'desc': 'base page', 'route': BasePage()},
     {'desc': 'container box', 'route': ContainBoxPage()},
-    {'desc': '变换', 'route': TransformTestPage()},
-    {'desc': '装饰容器', 'route': DecoratedBoxPage()},
-    {'desc': '尺寸限制类容器', 'route': ConstrainedBoxPage()},
+    {'desc': '变换 Transform', 'route': TransformTestPage()},
+    {'desc': '装饰容器 DecoratedBox', 'route': DecoratedBoxPage()},
+    {'desc': '尺寸限制类容器 ConstrainedBox', 'route': ConstrainedBoxPage()},
     {'desc': 'padding page', 'route': PaddingPage()},
     {'desc': 'align page', 'route': AlignTest()},
     {'desc': 'stack & positioned page', 'route': StackPositioned()},
