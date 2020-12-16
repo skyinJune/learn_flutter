@@ -12,6 +12,7 @@ class AnimatedWidgetTestState extends State<AnimatedWidgetTest> {
   double _width = 100;
   double _height = 100;
   Color _color = Colors.red;
+  TextStyle _style = TextStyle(color: Colors.black);
 
   @override
   Widget build(BuildContext context) {
@@ -85,8 +86,26 @@ class AnimatedWidgetTestState extends State<AnimatedWidgetTest> {
                   });
                 },
               ),
-            )
-          ],
+            ),
+            AnimatedDefaultTextStyle(
+                duration: duration,
+                style: _style,
+                child: GestureDetector(
+                  child: Text('AnimatedDefaultTextStyle'),
+                  onTap: () {
+                    setState(() {
+                      _style = _style == TextStyle(color: Colors.black)
+                          ? TextStyle(color: Colors.blue)
+                          : TextStyle(color: Colors.black);
+                    });
+                  },
+                ))
+          ]
+              .map((e) => Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    child: e,
+                  ))
+              .toList(),
         ),
       ),
     );
