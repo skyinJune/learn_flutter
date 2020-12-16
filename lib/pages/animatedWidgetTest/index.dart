@@ -9,6 +9,10 @@ class AnimatedWidgetTestState extends State<AnimatedWidgetTest> {
   double _padding = 10;
   double _left = 100;
   Alignment _alignment = Alignment.topLeft;
+  double _width = 100;
+  double _height = 100;
+  Color _color = Colors.red;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +68,22 @@ class AnimatedWidgetTestState extends State<AnimatedWidgetTest> {
                   },
                   child: Text('AnimatedAlign'),
                 ),
+              ),
+            ),
+            AnimatedContainer(
+              duration: duration,
+              width: _width,
+              height: _height,
+              color: _color,
+              child: FlatButton(
+                child: Text('AnimatedContainer'),
+                onPressed: () {
+                  setState(() {
+                    _width = _width + 10;
+                    _height = _height + 10;
+                    _color = _color == Colors.red ? Colors.blue : Colors.red;
+                  });
+                },
               ),
             )
           ],
