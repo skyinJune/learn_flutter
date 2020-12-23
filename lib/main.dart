@@ -6,6 +6,7 @@ import 'package:learn_flutter/pages/customGradientButtonTest/index.dart';
 import 'package:learn_flutter/pages/customNotificationTest/index.dart';
 import 'package:learn_flutter/pages/customPageTransAnimation/index.dart';
 import 'package:learn_flutter/pages/dialogTest/index.dart';
+import 'package:learn_flutter/pages/dioTestRoute/index.dart';
 import 'package:learn_flutter/pages/dragTest/index.dart';
 import 'package:learn_flutter/pages/fileOperationTest/index.dart';
 import 'package:learn_flutter/pages/futureBuilderTest/index.dart';
@@ -74,6 +75,7 @@ class DemoHomePage extends StatelessWidget {
   final String title; // home页title
   final List _routeList = <Map>[
     // route列表
+    {'desc': 'Dio Test', 'route': DioTestRoute()},
     {'desc': 'File Operation Test', 'route': FileOperationRoute()},
     {
       'desc': 'Custom Gradient Button Test',
