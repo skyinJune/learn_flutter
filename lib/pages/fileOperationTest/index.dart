@@ -42,12 +42,29 @@ class _FileOperationRoute extends State<FileOperationRoute> {
     }
   }
 
+  Future<Null> _resetCounter() async {
+    setState(() {
+      _count = 0;
+    });
+    await (await _getLocalFile()).writeAsString('0');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('File Operation Test')),
       body: Center(
-        child: Text('you have clicked $_count times'),
+        child: Column(
+          children: [
+            Text('you have clicked $_count times'),
+            RaisedButton(
+              onPressed: () {
+                _resetCounter();
+              },
+              child: Text('reset'),
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
