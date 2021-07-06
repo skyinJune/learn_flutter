@@ -5,7 +5,7 @@ class TextPage extends StatelessWidget {
   TextPage();
   @override
   Widget build(BuildContext context) {
-    GestureRecognizer _recognizer = new TapGestureRecognizer();
+    TapGestureRecognizer _tapGestureRecognizer = new TapGestureRecognizer();
     return Scaffold(
       appBar: AppBar(title: Text('text page')),
       body: Container(
@@ -48,7 +48,10 @@ class TextPage extends StatelessWidget {
               TextSpan(
                   text: 'https://flutterchina.club',
                   style: TextStyle(color: Colors.blue),
-                  recognizer: _recognizer),
+                  recognizer: _tapGestureRecognizer
+                    ..onTap = () {
+                      print('链接被点击了~');
+                    }),
             ]))
           ],
         ),
